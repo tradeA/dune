@@ -372,6 +372,8 @@ let gen_dune_package sctx pkg =
           ; name
           ; entries
           ; dir = Path.build pkg_root
+          ; share = None
+          ; lib = None
           }
       in
       dune_package
@@ -412,6 +414,8 @@ let gen_dune_package sctx pkg =
         ; dir =
             Path.build
               (Config.local_install_lib_dir ~context:ctx.name ~package:name)
+        ; share = None
+        ; lib = None
         }
       in
       Build.write_file
